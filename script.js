@@ -1,28 +1,39 @@
 ('use strict');
 
+let playerScore = 0;
+let computerScore = 0;
+
+
+
+
 function game(){
-    for (let i=0; i<5; i++){
+    for( let i =0; i<5; i++){
 
-const playerSelection = window.prompt('Please pick and type one out of rock, paper or scissors.').toLowerCase();
+        const playerSelection = window.prompt('Please pick and type one out of rock, paper or scissors.').toLowerCase();
 
-const janken = ['rock','paper','scissors'];
-const computerSelection = janken[Math.floor(Math.random()*janken.length)];
-
-    function playRound(playerSelection, computerSelection) {
-        if(playerSelection===computerSelection){
-            return 'Tie! Try again :)';
-        } else if(playerSelection==='rock'&&computerSelection==='scissors'||playerSelection==='scissors'&&computerSelection==='paper'||playerSelection==='paper'&&computerSelection==='rock'){
-            return `You won! ${playerSelection} beats ${computerSelection}. Congratulations!:D`;
-        } else{
-            return`You lost! ${playerSelection} is beaten by ${computerSelection}. Try again. :)`;
+        const janken = ['rock','paper','scissors'];
+        const computerSelection = janken[Math.floor(Math.random()*janken.length)];
+       
+        function playRound(playerSelection, computerSelection) {
+    
+            if(playerSelection===computerSelection){
+                return `Tie! ${playerSelection} and ${computerSelection}. Try again :)`;
+            } else if(playerSelection==='rock'&&computerSelection==='scissors'||playerSelection==='scissors'&&computerSelection==='paper'||playerSelection==='paper'&&computerSelection==='rock'){
+                playerScore += 1;
+                return `You won! ${playerSelection} beats ${computerSelection}. Congratulations!:D`;
+            } else{
+                computerScore += 1;
+                return`You lost! ${playerSelection} is beaten by ${computerSelection}. Try again. :)`;
+            }
         }
+        
+        console.log( `${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`)
+        //return `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`;
+        
     }
-  return `This is the ${i}th challenge. ${console.log(playRound(playerSelection,computerSelection))}`
-  }
 }
 
-console.log(game())
-
+game()
 
 //if(guestJanken === randJanken){
 //    console.log('Tie! Try again :)');
