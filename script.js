@@ -2,32 +2,40 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let i = 0;
 
-
-
+function playRound(playerSelection, computerSelection) {
+    
+    if(playerSelection===computerSelection){
+        return `Tie! ${playerSelection} and ${computerSelection}. Try again :)`;
+    } else if(playerSelection==='rock'&&computerSelection==='scissors'||playerSelection==='scissors'&&computerSelection==='paper'||playerSelection==='paper'&&computerSelection==='rock'){
+        playerScore += 1;
+        return `You won! ${playerSelection} beats ${computerSelection}. Congratulations!:D`;
+    } else{
+        computerScore += 1;
+        return`You lost! ${playerSelection} is beaten by ${computerSelection}. Try again. :)`;
+    }
+}
 
 function game(){
-    for( let i =0; i<5; i++){
+    while(playerScore < 5 && computerScore < 5){
 
-        const playerSelection = window.prompt('Please pick and type one out of rock, paper or scissors.').toLowerCase();
+        //const playerSelection = window.prompt('Please pick and type one out of rock, paper or scissors.').toLowerCase();
+       const playerSelection = window.addEventListener('click',function(e){
+            const playerSelection = e.target;
+            playerSelection = playerSelection.dataset.janken;
+            return playerSelection 
+        }
+        )
 
         const janken = ['rock','paper','scissors'];
         const computerSelection = janken[Math.floor(Math.random()*janken.length)];
        
-        function playRound(playerSelection, computerSelection) {
-    
-            if(playerSelection===computerSelection){
-                return `Tie! ${playerSelection} and ${computerSelection}. Try again :)`;
-            } else if(playerSelection==='rock'&&computerSelection==='scissors'||playerSelection==='scissors'&&computerSelection==='paper'||playerSelection==='paper'&&computerSelection==='rock'){
-                playerScore += 1;
-                return `You won! ${playerSelection} beats ${computerSelection}. Congratulations!:D`;
-            } else{
-                computerScore += 1;
-                return`You lost! ${playerSelection} is beaten by ${computerSelection}. Try again. :)`;
-            }
-        }
+        playRound(playerSelection,computerSelection)
         
-        console.log( `${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`)
+        i += 1;
+        
+        console.log( `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`)
         //return `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`;
         
     }
