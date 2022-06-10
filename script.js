@@ -5,22 +5,19 @@ let computerScore = 0;
 let i = 0;
 
 
-
 function game(){
        
-       //const playerSelection = window.prompt('Rock,paper or scissors?').toLocaleLowerCase();
+
 
        window.addEventListener('click',function(e){
             const playerSelection = (e.target).dataset.janken;
        
         console.log(playerSelection);
 
-         
         const janken = ['rock','paper','scissors'];
         const computerSelection = janken[Math.floor(Math.random()*janken.length)];
        
         console.log(computerSelection);
-
 
         function playRound(playerSelection, computerSelection) {
     
@@ -36,27 +33,11 @@ function game(){
         }
         
         i += 1;
+      
+        this.document.getElementById('message').textContent= `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`;
         
-        console.log( `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`)
-        //return `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`;
     })
-       };
+};
 
 game()
-
-//if(guestJanken === randJanken){
-//    console.log('Tie! Try again :)');
-//} else if(guestJanken==='rock' && randJanken === 'paper'){
-//    console.log('You lost! Paper beats rock. Try again :) ');
-//} else if(guestJanken==='rock' && randJanken ==='scissors'){
-//    console.log('You won! Rock beats scissors. Congratulations!:D');
-//} else if(guestJanken==='paper' && randJanken === 'rock'){
-//    console.log('You won! Paper beats rock. Congratulations!:D');
-//} else if(guestJanken==='paper' && randJanken ==='scissor'){
-//    console.log('You lost! Scissor beats paper. Try again :)');
-//} else if(guestJanken==='scissor' && randJanken === 'paper'){
-//    console.log('You won! Scissor beats paper. Congratulations!:D');
-//} else if(guestJanken==='scissor' && randJanken === 'rock'){
-//    console.log('You lost! Rock beats scissor. Try again :)');
-//}
 
