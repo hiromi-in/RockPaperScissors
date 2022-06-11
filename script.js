@@ -6,9 +6,9 @@ let i = 0;
 
 function gameOver(){
     if (playerScore===5){
-        document.getElementById('h2').textContent= 'You did it!! You beat the machine!';
+        document.getElementById('message').textContent= 'You did it!! You beat the machine!';
     } else if (computerScore===5){
-        document.getElementById('h2').textContent= 'Computer got you this time. Try it again!';
+        document.getElementById('message').textContent= 'Computer got you this time. Try it again!';
     };
     playerScore = 0;
     computerScore = 0;   
@@ -18,8 +18,6 @@ function gameOver(){
 function game(){
 
        window.addEventListener('click',function(e){
-
-            document.getElementById('h2').textContent = 'Please click one!';
 
             const playerSelection = (e.target).dataset.janken;
     
