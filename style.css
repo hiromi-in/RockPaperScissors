@@ -1,0 +1,16 @@
+body{
+    background-color: #3FD3DC;
+    display: flexbox;
+    justify-content: center;
+    
+}
+
+#select{
+    display: flexbox;
+    justify-content: space-evenly;
+}
+
+img{
+    height: 400px;
+    width: 400px;
+}
