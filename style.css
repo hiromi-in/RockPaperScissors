@@ -37,3 +37,7 @@ img{
 #c_score{
     margin:0 0 0 85px;
 }
+
+#y_point, #c_point{
+    font-size: xx-large;
+}

@@ -3,6 +3,8 @@
 let playerScore = 0;
 let computerScore = 0;
 let i = 0;
+document.getElementById('y_point').textContent = playerScore;
+document.getElementById('c_point').textContent = computerScore;
 
 function gameOver(){
     if (playerScore===5){
@@ -17,6 +19,9 @@ function gameOver(){
 
 function game(){
 
+       
+       
+
        window.addEventListener('click',function(e){
 
             const playerSelection = (e.target).dataset.janken;
@@ -30,14 +35,16 @@ function game(){
                     return `Tie! ${playerSelection} and ${computerSelection}. Try again :)`;
                 } else if(playerSelection==='rock'&&computerSelection==='scissors'||playerSelection==='scissors'&&computerSelection==='paper'||playerSelection==='paper'&&computerSelection==='rock'){
                     playerScore += 1;
+                    document.getElementById('y_point').textContent = playerScore;
                     return `You won! ${playerSelection} beats ${computerSelection}. Congratulations!:D`;
                 } else{
                     computerScore += 1;
+                    document.getElementById('c_point').textContent = computerScore;
                     return`You lost! ${playerSelection} is beaten by ${computerSelection}. Try again. :)`;
                 }
             }
             i += 1;
-            this.document.getElementById('message').textContent= `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}. Your score is ${playerScore} and computer score is ${computerScore}.`;
+            this.document.getElementById('message').textContent= `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}.`;
             
             if (playerScore===5 || computerScore ===5){
             gameOver();
