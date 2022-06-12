@@ -1,16 +1,39 @@
 body{
     background-color: #3FD3DC;
-    display: flexbox;
-    justify-content: center;
-    
+    display: flex;
+    align-items: center;
+    font-family: "Audiowide", "Share Tech Mono", sans-serif;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1{
+    font-size:60px;
+}
+
+h4{
+    font-size: 30px;
 }
 
 #select{
-    display: flexbox;
+    display: flex;
     justify-content: space-evenly;
 }
 
 img{
     height: 400px;
     width: 400px;
+}
+
+#score{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#y_score{
+    margin:0 25px 0 0;
+}
+
+#c_score{
+    margin:0 0 0 85px;
 }
