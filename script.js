@@ -6,21 +6,24 @@ let i = 0;
 document.getElementById('y_point').textContent = playerScore;
 document.getElementById('c_point').textContent = computerScore;
 
+
 function gameOver(){
     if (playerScore===5){
         document.getElementById('message').textContent= 'You did it!! You beat the machine!';
     } else if (computerScore===5){
         document.getElementById('message').textContent= 'Computer got you this time. Try it again!';
     };
+
     playerScore = 0;
     computerScore = 0;   
     i = 0;
-}
+    document.getElementById('y_point').textContent = playerScore;
+    document.getElementById('c_point').textContent = computerScore;
+
+    }
 
 function game(){
-
-       
-       
+    
 
        window.addEventListener('click',function(e){
 
@@ -48,8 +51,9 @@ function game(){
             
             if (playerScore===5 || computerScore ===5){
             gameOver();
-             
             };
+            
+            
         });
    
 

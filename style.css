@@ -41,3 +41,7 @@ img{
 #y_point, #c_point{
     font-size: xx-large;
 }
+
+#v_message{
+    color: tomato;
+}
