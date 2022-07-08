@@ -44,6 +44,11 @@ img{
     font-size: xx-large;
 }
 
-#v_message{
-    color: tomato;
+
+button{
+    border-radius: 64px;
+    background-color: #3FD3DC;
+    font-family: "Audiowide";
+    font-size: larger;
 }
+

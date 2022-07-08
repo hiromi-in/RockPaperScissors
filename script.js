@@ -22,7 +22,7 @@ function gameOver(){
 function reset(){
     document.getElementById('reset').onclick = function(){
     playerScore = 0;
-    computerScore = 0;   
+    computerScore = 0;
     i = 0;
     document.getElementById('y_point').textContent = playerScore;
     document.getElementById('c_point').textContent = computerScore;
