@@ -5,26 +5,33 @@ let computerScore = 0;
 let i = 0;
 document.getElementById('y_point').textContent = playerScore;
 document.getElementById('c_point').textContent = computerScore;
-
+let BtnReset = `<p><button id='reset'>Reset</button></p>`
 
 function gameOver(){
     if (playerScore===5){
         document.getElementById('message').textContent= 'You did it!! You beat the machine!';
+        document.getElementById('message').insertAdjacentHTML('beforeend',BtnReset);
     } else if (computerScore===5){
         document.getElementById('message').textContent= 'Computer got you this time. Try it again!';
+        document.getElementById('message').insertAdjacentHTML('beforeend',BtnReset);    
     };
+        
+}
 
-    playerScore = 0;
-    computerScore = 0;   
-    i = 0;
-    document.getElementById('y_point').textContent = playerScore;
-    document.getElementById('c_point').textContent = computerScore;
+//function reset(){
+//    if(window.confirm('Would you like to try again?')){
+//    playerScore = 0;
+//    computerScore = 0;   
+//    i = 0;
+//    document.getElementById('y_point').textContent = playerScore;
+//    document.getElementById('c_point').textContent = computerScore;
+//    };
+//};
 
-    }
 
 function game(){
-    
 
+      
        window.addEventListener('click',function(e){
 
             const playerSelection = (e.target).dataset.janken;
@@ -51,13 +58,12 @@ function game(){
             
             if (playerScore===5 || computerScore ===5){
             gameOver();
+            //reset();
             };
-            
-            
+              
         });
    
 
 }
 
 game();
-
