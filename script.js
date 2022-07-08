@@ -2,10 +2,11 @@
 
 let playerScore = 0;
 let computerScore = 0;
-let i = 0;
+//let i = 0;
 document.getElementById('y_point').textContent = playerScore;
 document.getElementById('c_point').textContent = computerScore;
-let BtnReset = `<p><button id='reset'>Reset</button></p>`
+const BtnReset = `<p><button id='reset'>Reset</button></p>`;
+
 
 function gameOver(){
     if (playerScore===5){
@@ -18,15 +19,15 @@ function gameOver(){
         
 }
 
-//function reset(){
-//    if(window.confirm('Would you like to try again?')){
-//    playerScore = 0;
-//    computerScore = 0;   
-//    i = 0;
-//    document.getElementById('y_point').textContent = playerScore;
-//    document.getElementById('c_point').textContent = computerScore;
-//    };
-//};
+function reset(){
+    document.getElementById('reset').onclick = function(){
+    playerScore = 0;
+    computerScore = 0;   
+    i = 0;
+    document.getElementById('y_point').textContent = playerScore;
+    document.getElementById('c_point').textContent = computerScore;
+    };
+};
 
 
 function game(){
@@ -47,18 +48,18 @@ function game(){
                     playerScore += 1;
                     document.getElementById('y_point').textContent = playerScore;
                     return `You won! ${playerSelection} beats ${computerSelection}. Congratulations!:D`;
-                } else{
+                }  else if (playerSelection==='rock'&&computerSelection==='paper'||playerSelection==='scissors'&&computerSelection==='rock'||playerSelection==='paper'&&computerSelection==='scissors'){
                     computerScore += 1;
                     document.getElementById('c_point').textContent = computerScore;
                     return`You lost! ${playerSelection} is beaten by ${computerSelection}. Try again. :)`;
-                }
+                } 
             }
-            i += 1;
-            this.document.getElementById('message').textContent= `This is the ${i}th challenge. ${playRound(playerSelection,computerSelection)}.`;
+            //i += 1;
+            this.document.getElementById('message').textContent= `${playRound(playerSelection,computerSelection)}.`;
             
             if (playerScore===5 || computerScore ===5){
             gameOver();
-            //reset();
+            reset();
             };
               
         });
