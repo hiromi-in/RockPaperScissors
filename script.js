@@ -55,7 +55,7 @@ function game(){
                     return`You lost! ${playerSelection} is beaten by ${computerSelection}. Try again. :)`;
 
                 } else {
-                    return `Please pick one of the cats!`
+                    return `Rock, paper or scissors? Please pick your cat!`
                 }
             }
             //i += 1;
