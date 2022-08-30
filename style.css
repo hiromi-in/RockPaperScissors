@@ -71,3 +71,37 @@ button{
 }
 
 /*Center the loading screen */
+#splash_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    width: 100%;
+}
+
+/* Animation for splitting the screen */
+.loader_cover{
+    width: 100%;
+    height: 50%;
+    background-color: #333;
+    transition: all .2s cubic-bezier(0.4, .435, .315, .9);
+    transform: scale(1);
+}
+
+/*Upper screen*/
+.loader_cover-up{
+    transform-origin: center top;
+}
+
+/*lower screen*/
+.loader_cover-down{
+    position: absolute;
+    bottom: 0;
+    transform-origin: center bottom;
+}
+
+.coveranime{
+    transform: scale(0);
+}
